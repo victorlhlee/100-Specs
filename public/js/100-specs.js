@@ -1147,7 +1147,7 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(garfieldBox.isOpen).to.equal(true);
 		});
 		js.mocha.M.it("should not close the box if it is open.",function() {
-			var garfieldBox1 = new Box(new Animal('Cat', 'male'), false);
+			var garfieldBox1 = new Box(new Animal('Cat', 'male'), true);
 			js.expect.E.expect(garfieldBox1.openBox()).to.equal(false);
 			js.expect.E.expect(garfieldBox1.isOpen).to.equal(true);
 		});

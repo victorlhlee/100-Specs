@@ -1240,7 +1240,7 @@ class HundredSpecs
       E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
     });
     M.it("should not close the box if it is open.", function() {
-      var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), false)");
+      var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), true)");
       E.expect(garfieldBox.openBox()).to.equal(false);
       E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
     });
