@@ -169,7 +169,7 @@
  * with properties and values set to:
  * 
  * MacBook      => 1500
- * AlienWare    => 2500
+ * Alienware    => 2500
  * HP           => 499
  * Surface      => 320
  *
