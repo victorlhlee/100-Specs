@@ -330,9 +330,9 @@ var beers = {
  * @return {Bool}
  *
  */
-var installLinux = function(linuxflavorsname){
+var installLinux = function(linuxflavorstype){
   for(i=0; i<linuxFlavors.length; i++){
-    if(linuxFlavors[i] === linuxflavorsname)
+    if(linuxFlavors[i] === linuxflavorstype)
       return true;
   }
   return false;
@@ -355,6 +355,23 @@ var installLinux = function(linuxflavorsname){
  * @return {Bool when False, String when True}
  *
  */
+
+ var drink = function (beerName){
+  //confirming if beerName is in the beers array
+  if(beers.hasOwnProperty(beerName)){
+    //if beer name's value is a string, then print the following:
+    if(typeof beers[beerName] === 'string'){
+    return ('This ' + beerName + ' is ' + beers[beerName] + '.');
+    }
+    if(beers[beerName] instanceof Array){
+    return ('This ' + beerName + ' is ' + beers[beerName][0] + ' and ' + beers[beerName][1] + '.');
+    }
+   }
+
+    return false;
+ };
+
+
 
 
 /* Step 24
