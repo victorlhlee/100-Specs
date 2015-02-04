@@ -1162,7 +1162,7 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(door.isOpen).to.equal(true);
 		});
 		js.mocha.M.it("should close the door if it is open.",function() {
-			var door1 = new Door(false);
+			var door1 = new Door(true);
 			js.expect.E.expect(door1.openClose()).to.equal(false);
 			js.expect.E.expect(door1.isOpen).to.equal(false);
 		});

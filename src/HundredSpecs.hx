@@ -1257,7 +1257,7 @@ class HundredSpecs
       E.expect(untyped(door.isOpen)).to.equal(true);
     });
     M.it("should close the door if it is open.", function() {
-      var door = untyped __js__("new Door(false)");
+      var door = untyped __js__("new Door(true)");
       E.expect(door.openClose()).to.equal(false);
       E.expect(untyped(door.isOpen)).to.equal(false);
     });
