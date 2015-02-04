@@ -307,14 +307,14 @@
  *
  * Define a function named "favoritePlanet" that
  * takes in the person's current planet and validates
- * that the planet exists. If it doesn't, print the
+ * that the planet exists. If it doesn't, return the
  * following message:
  * 
  * "{currentPlanet} is not a planet!"
  * 
  * If the planet does exist, select a different, random
  * planet from the "planets" variable. Once selected,
- * print the following message:
+ * return the following message:
  * 
  * "I'm from {currentPlanet}, but I wish I could go to {randomPlanet}."
  * 
@@ -378,8 +378,6 @@
  *
  * Define a class named "Pen" with a property for
  * color and a class method named "write" that takes
- * a message to write as a parameter and prints the
- * message out.
  * a message string as a parameter and returns the
  * string back with the pen's color added to the 
  * beginning of the string
