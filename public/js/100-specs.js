@@ -1091,7 +1091,7 @@ HundredSpecs.prototype = {
 	}
 	,step81: function() {
 		js.mocha.M.it("isWarmBlooded should be a function.",function() {
-			js.expect.E.expect(Animal).to.not.be.a("function");
+			js.expect.E.expect(Animal).to.be.a("function");
 		});
 		js.mocha.M.it("'Monkey' and 'Bird' should return true.",function() {
 			js.expect.E.expect(new Animal('Monkey', 'male').isWarmBlooded()).to.equal(true);

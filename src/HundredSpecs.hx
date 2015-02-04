@@ -1178,7 +1178,7 @@ class HundredSpecs
   private inline function step81():Void
   {
     M.it("isWarmBlooded should be a function.", function() {
-      E.expect(untyped __js__("Animal")).to.not.be.a('function');
+      E.expect(untyped __js__("Animal")).to.be.a('function');
     });
     M.it("'Monkey' and 'Bird' should return true.", function() {
       E.expect(untyped __js__("new Animal('Monkey', 'male')").isWarmBlooded()).to.equal(true);
