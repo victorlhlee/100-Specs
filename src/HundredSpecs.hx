@@ -101,6 +101,7 @@ class HundredSpecs
   {
     M.it("should declare a variable named 'unicorn' with no value set.", function() {
       E.expect(untyped(unicorn)).to.not.be.a('undefined');
+      E.expect(untyped(unicorn)).to.equal(null);
     });
   }
 
