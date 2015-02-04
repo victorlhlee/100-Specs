@@ -409,8 +409,6 @@ return false;
   
  };
 
-// var livingOrganismClassification = ["Kingdom", "Phylum", "Class", "Order","Family", "Genus", "Species"];
-
 
 /* Step 26
  *
@@ -431,8 +429,19 @@ return false;
  * @return {String}
  *
  */
-
-
+var favoritePlanet = function(currPlanet){
+  //confirming if current planet exists
+  if(planets.indexOf(currPlanet) === -1 || currPlanet === undefined){
+  //print message  
+    return currPlanet + " is not a planet!";
+  }else{
+    //if planet exists, select  different, random planet from planets variable
+    var randomPlanet = planets[Math.floor(Math.random()*planets.length)];
+    //print message
+    return ("I'm from " + currPlanet + ", but I wish I could go to " + randomPlanet);
+  }
+};
+ // 
 /* Step 27
  *
  * Define a class named "Person" that has properties for
