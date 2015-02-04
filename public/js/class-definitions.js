@@ -400,10 +400,15 @@
  *
  * Define a class named "Garden" with a property for
  * the number of plants and whether it was recently
- * watered. Define class methods for "water" which
- * sets the recently watered property to true and
- * "grow" which adds a plant to the garden if it was
- * recently watered and exhausts the water.
+ * watered. 
+ * 
+ * Define a class method named "water" which
+ * sets the recently watered property to true
+ * 
+ * Defined a class method named "grow" which adds a plant to 
+ * the garden if it was recently watered and exhausts the water.
+ * If this method is called and the 'isWatered' property is 
+ * false, it should return false;
  * 
  * class
  *   Garden

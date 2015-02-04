@@ -626,8 +626,9 @@ class HundredSpecs
     });
     M.it("should be able to grow more plants", function (){
       var myGarden = untyped __js__("new Garden(10)");
+      E.expect( untyped(myGarden.grow()) ).to.equal(false);
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(10);
-      untyped(myGarden.grow());
+      untyped (myGaren.water());
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(11);
     });
   }

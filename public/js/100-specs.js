@@ -823,8 +823,9 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should be able to grow more plants",function() {
 			var myGarden = new Garden(10);
+			js.expect.E.expect(myGarden.grow()).to.equal(false);
 			js.expect.E.expect(myGarden.plantsTotal).to.equal(10);
-			myGarden.grow();
+			myGaren.water();
 			js.expect.E.expect(myGarden.plantsTotal).to.equal(11);
 		});
 	}
@@ -1276,6 +1277,7 @@ HundredSpecs.prototype = {
 	,step1: function() {
 		js.mocha.M.it("should declare a variable named 'unicorn' with no value set.",function() {
 			js.expect.E.expect(unicorn).to.not.be.a("undefined");
+			js.expect.E.expect(unicorn).to.equal(null);
 		});
 	}
 	,__class__: HundredSpecs
