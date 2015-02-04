@@ -404,6 +404,13 @@ return false;
  *
  */
 
+ var listLivingOrgClass = function () {
+  return ('<ul> <li>" ' + "Kingdom" + ' "</li> <li>" ' + "Phylum" + ' "</li> <li>" ' + "Class" + ' "</li>  <li>" ' + "Order" + ' "</li>  <li>" ' + "Family" + ' "</li>  <li>" ' + "Genus" + ' "</li>  <li>" ' + "Species" + ' "</li>  </ul>');
+  
+ };
+
+// var livingOrganismClassification = ["Kingdom", "Phylum", "Class", "Order","Family", "Genus", "Species"];
+
 
 /* Step 26
  *
