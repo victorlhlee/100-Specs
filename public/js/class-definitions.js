@@ -65,7 +65,7 @@
 
 /* Step 9
  *
- * Define a literal object named "Gender"
+ * Define a literal object named "gender"
  * with properties and values set to:
  *
  *   female  => "female"
