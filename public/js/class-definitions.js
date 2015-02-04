@@ -386,6 +386,13 @@ var installLinux = function(linuxflavorstype){
  *
  */
 
+var browseURL = function (browsername){
+  if(browsers.hasOwnProperty(browsername)){
+    return browsers[browsername];
+  }
+return false;
+};
+
 
 /* Step 25
  *
