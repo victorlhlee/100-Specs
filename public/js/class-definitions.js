@@ -330,7 +330,13 @@ var beers = {
  * @return {Bool}
  *
  */
-
+var installLinux = function(linuxflavorsname){
+  for(i=0; i<linuxFlavors.length; i++){
+    if(linuxFlavors[i] === linuxflavorsname)
+      return true;
+  }
+  return false;
+};
 
 /* Step 23
  *
