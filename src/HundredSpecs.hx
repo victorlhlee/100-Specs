@@ -626,6 +626,7 @@ class HundredSpecs
     M.it("should be able to grow more plants", function (){
       var myGarden = untyped __js__("new Garden(10)");
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(10);
+      untyped(myGarden.water());
       untyped(myGarden.grow());
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(11);
     });
