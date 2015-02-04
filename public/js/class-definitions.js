@@ -283,11 +283,11 @@
  *
  * Define a function named "browseURL" that takes
  * a browser and validates it, as defined by "browsers"
- * If the browser doesn't exist, return an error message.
+ * If the browser doesn't exist, return false.
  * If the browser exists, return the value which is a partial URL.
  * 
  * @param {String}
- * @return {String}
+ * @return {String if true else return false}
  *
  */
 
