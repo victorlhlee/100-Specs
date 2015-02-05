@@ -1050,6 +1050,10 @@ function Shoe (size, color){
  * @param {number} stories How many stories tall the house is
  */
 
+ function House (stories){
+  this.stories = stories;
+ }
+
 
 /**
  * Step 57
