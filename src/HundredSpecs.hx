@@ -628,7 +628,8 @@ class HundredSpecs
       var myGarden = untyped __js__("new Garden(10)");
       E.expect( untyped(myGarden.grow()) ).to.equal(false);
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(10);
-      untyped (myGaren.water());
+      untyped(myGarden.water());
+      untyped(myGarden.grow());
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(11);
     });
   }
@@ -1199,7 +1200,7 @@ class HundredSpecs
   {
     M.it("drive should be a function.", function() {
       var myVehicle = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
-      E.expect( untyped(Vehicle.drive) ).to.be.a("function");
+      E.expect( untyped(myVehicle.drive) ).to.be.a("function");
     });
     M.it("should return 'Driving on {streetName}' if param is a string and not empty", function() {
       var cruiser = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
