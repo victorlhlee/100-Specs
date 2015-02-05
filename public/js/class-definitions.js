@@ -607,6 +607,18 @@ Pen.prototype.write = function (message){
  *   removePlanet
  *
  */
+function SolarSystem (){
+  this.planets = [];
+
+}
+
+SolarSystem.prototype.addPlanet = function (newPlanet){
+  this.planets.push(newPlanet);
+};
+
+SolarSystem.prototype.removePlanet = function (oldPlanet){
+  this.planets.splice(oldPlanet);
+};
 
 
 /* Step 33
