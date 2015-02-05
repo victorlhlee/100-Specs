@@ -1303,7 +1303,7 @@ class HundredSpecs
   {
     M.it("flipSwitch should be a function.", function() {
       var myLightbulb = untyped __js__("new Lightbulb(false)");
-      E.expect( untyped(myLightBulb.flipSwitch) ).to.be.a("function");
+      E.expect( untyped(myLightbulb.flipSwitch) ).to.be.a("function");
     });
     M.it("should flip the switch on if 'on' is passed in as a param.", function() {
       var light = untyped __js__("new Lightbulb(false)");
