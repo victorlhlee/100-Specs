@@ -1001,6 +1001,9 @@ function Animal (species, gender){
  * @param {number} sides The number of sides, should be greater than 3
  */
 
+function Shape (sides){
+  this.sides = sides;
+}
 
 /**
  * Step 53
