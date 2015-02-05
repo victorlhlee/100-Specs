@@ -758,29 +758,29 @@ PrincessLeia.prototype.marries = function (man){
  *   addDiscovery
  *   
  */
-// function Scientist (name, money, age, gender, disciplines, discoveries){
-//   this.disciplines = [];
-//   this.discoveries = [];
-// }
-// //extends the person class
-// Scientist.prototype = Object.create(Person.prototype,{
-//   constructor : {
-//     value : Person
-//   }
-// });
+function Scientist (name, money, age, gender, disciplines, discoveries){
+  this.disciplines = [];
+  this.discoveries = [];
+}
+//extends the person class
+Scientist.prototype = Object.create(Person.prototype,{
+  constructor : {
+    value : Person
+  }
+});
 
-// Scientist.prototype.addDiscipline = function(string){
-//   this.disciplines += string;
+Scientist.prototype.addDiscipline = function(string){
+  this.disciplines += string;
 
-// };
+};
 
-// Scientist.prototype.checkDiscipline = function(){
+Scientist.prototype.checkDiscipline = function(){
 
-// };
+};
 
-// Scientist.prototype.addDiscovery = function (){
+Scientist.prototype.addDiscovery = function (){
 
-// };
+};
 
 /* Step 36
  *
@@ -976,10 +976,10 @@ PrincessLeia.prototype.marries = function (man){
  * @param {string} gender  male or female
  */
 
-// function Animal (species, gender){
-//   this.species = species;
-//   this.gender = gender;
-// }
+function Animal (species, gender){
+  this.species = species;
+  this.gender = gender;
+}
 /**
  * Step 51
  * 
