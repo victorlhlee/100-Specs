@@ -493,6 +493,21 @@ Person.prototype.earnMoney = function (dollarbillz){
  *
  */
 
+function purchaseLaptop (laptop){
+  //confirming if laptop is in laptop costs
+  if(laptopCosts.hasOwnProperty(laptop)){
+    //if confirmed, return cost of laptop
+    return laptopCosts[laptop].toString();
+    }
+  return -1;
+}
+
+// var browseURL = function (browsername){
+//   if(browsers.hasOwnProperty(browsername)){
+//     return browsers[browsername];
+//   }
+// return false;
+
 
 /* Step 29
  *
