@@ -547,6 +547,14 @@ function canTalkAbout (club) {
  *
  */
 
+function Pen (color){
+  this.color = color;
+}
+
+Pen.prototype.write = function (message){
+  return this.color + ': ' + message;
+};
+
 
 /* Step 31
  *
