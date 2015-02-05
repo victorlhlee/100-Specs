@@ -502,11 +502,6 @@ function purchaseLaptop (laptop){
   return -1;
 }
 
-// var browseURL = function (browsername){
-//   if(browsers.hasOwnProperty(browsername)){
-//     return browsers[browsername];
-//   }
-// return false;
 
 
 /* Step 29
@@ -520,6 +515,13 @@ function purchaseLaptop (laptop){
  * @return {Bool}
  *
  */
+
+function canTalkAbout (club) {
+  if(club === club_name){
+    return false;
+  }
+  return true;
+}
 
 
 /* Step 30
