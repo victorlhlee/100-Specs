@@ -743,7 +743,10 @@
  * Step 52
  * 
  * Shape class
- * @param {number} sides The number of sides, should be greater than 3
+ * @param {number} sides The number of sides, should be a number 
+ * greater or equal to 3, if the number is less than 3 then set the
+ * value of the sides property to null.
+ * 
  */
 
 

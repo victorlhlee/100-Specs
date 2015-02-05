@@ -870,6 +870,14 @@ class HundredSpecs
     M.it("should have a sides property.", function() {
       E.expect(untyped __js__("new Shape(5)")).to.have.property("sides");
     });
+    M.it("should have NOT create a new Shape if given a number lower than 3 or if given any other data type.", function() {
+      E.expect(untyped __js__("new Shape(2)").sides).to.equal(null);
+      E.expect(untyped __js__("new Shape(1)").sides).to.equal(null);
+      E.expect(untyped __js__("new Shape(0)").sides).to.equal(null);
+      E.expect(untyped __js__("new Shape('')").sides).to.equal(null);
+      E.expect(untyped __js__("new Shape({})").sides).to.equal(null);
+      E.expect(untyped __js__("new Shape([])").sides).to.equal(null);
+    });
   }
 
   private inline function step53():Void
