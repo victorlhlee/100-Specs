@@ -705,18 +705,18 @@ PrincessLeia.prototype.marries = function (man){
  *
  */
 
- // function Stapler (color, maxPapers){
- //  this.color = color;
- //  this.maxPapers = maxPapers;
+ function Stapler (color, maxPapers){
+  this.color = color;
+  this.maxPapers = maxPapers;
 
- // }
+ }
 
- // Stapler.prototype.staplePapers = function(numPapers){
- //  if(numPapers <= this.maxPapers){
- //    return true;
- //  }
- //  return false;
- // };
+ Stapler.prototype.staplePapers = function(numPapers){
+  if(numPapers <= this.maxPapers){
+    return true;
+  }
+  return false;
+ };
 
 
 
