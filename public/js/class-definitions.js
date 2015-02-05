@@ -653,7 +653,39 @@ SolarSystem.prototype.removePlanet = function (oldPlanet){
  *   marries
  *
  */
+function PrincessLeia (name, money, age, gender){
+  this.isInTrouble = null;
+//supercall for instance of PrincessLeia Class  
+Person.call(this, name, money, age, gender);
 
+}
+//Extend Person class
+PrincessLeia.prototype = Object.create(Person.prototype,{
+  constructor : {
+    value : Person
+  }
+});
+
+PrincessLeia.prototype.shootsGun = function (){
+  this.isInTrouble = false;
+  return "Leia shoots her gun wildly";
+};
+
+PrincessLeia.prototype.getsInTrouble = function (){
+  this.isInTrouble = true;
+  return "Help me Obi-wan Kenobi, you're my only hope";
+
+};
+
+PrincessLeia.prototype.marries = function (man){
+  if(man === "Han Solo"){
+    return true;
+   }
+  if(man === "Luke Skywalker"){
+    return "Gross!";
+  } 
+  return false;
+  };
 
 /* Step 34
  *
@@ -672,6 +704,20 @@ SolarSystem.prototype.removePlanet = function (oldPlanet){
  *   staplePapers
  *
  */
+
+ // function Stapler (color, maxPapers){
+ //  this.color = color;
+ //  this.maxPapers = maxPapers;
+
+ // }
+
+ // Stapler.prototype.staplePapers = function(numPapers){
+ //  if(numPapers <= this.maxPapers){
+ //    return true;
+ //  }
+ //  return false;
+ // };
+
 
 
 /* Step 35
@@ -712,7 +758,29 @@ SolarSystem.prototype.removePlanet = function (oldPlanet){
  *   addDiscovery
  *   
  */
+// function Scientist (name, money, age, gender, disciplines, discoveries){
+//   this.disciplines = [];
+//   this.discoveries = [];
+// }
+// //extends the person class
+// Scientist.prototype = Object.create(Person.prototype,{
+//   constructor : {
+//     value : Person
+//   }
+// });
 
+// Scientist.prototype.addDiscipline = function(string){
+//   this.disciplines += string;
+
+// };
+
+// Scientist.prototype.checkDiscipline = function(){
+
+// };
+
+// Scientist.prototype.addDiscovery = function (){
+
+// };
 
 /* Step 36
  *
@@ -733,8 +801,8 @@ SolarSystem.prototype.removePlanet = function (oldPlanet){
  *   deposit
  *   rob
  *
- */
-
+ *  
+}
 
 /* Step 37
  *
@@ -908,7 +976,10 @@ SolarSystem.prototype.removePlanet = function (oldPlanet){
  * @param {string} gender  male or female
  */
 
-
+// function Animal (species, gender){
+//   this.species = species;
+//   this.gender = gender;
+// }
 /**
  * Step 51
  * 
@@ -916,6 +987,11 @@ SolarSystem.prototype.removePlanet = function (oldPlanet){
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
+
+ // function Vehicle (make, model){
+ //  this.make = make;
+ //  this.model = model;
+ // }
 
 
 /**
