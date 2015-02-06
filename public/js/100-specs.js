@@ -209,7 +209,7 @@ HundredSpecs.prototype = {
 	,step88: function() {
 		js.mocha.M.it("flipSwitch should be a function.",function() {
 			var myLightbulb = new Lightbulb(false);
-			js.expect.E.expect(myLightBulb.flipSwitch).to.be.a("function");
+			js.expect.E.expect(myLightbulb.flipSwitch).to.be.a("function");
 		});
 		js.mocha.M.it("should flip the switch on if 'on' is passed in as a param.",function() {
 			var light = new Lightbulb(false);
@@ -594,6 +594,7 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(new Shape(0).sides).to.equal(null);
 			js.expect.E.expect(new Shape('').sides).to.equal(null);
 			js.expect.E.expect(new Shape({}).sides).to.equal(null);
+			js.expect.E.expect(new Shape([]).sides).to.equal(null);
 		});
 	}
 	,step51: function() {
