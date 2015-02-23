@@ -1115,23 +1115,11 @@ function Meal (foods){
 
 // Create 2 different species of animals
 
+var george = new Animal("Monkey", "male");
+var nemo = new Animal("Fish", "male");
 
-function george () {
-  
 
-  Animal.call();
-}
 
-george.prototype = Object.create(Animal.prototype, {
-  constructor : {
-    value: Animal
-   }
-  });
-
-// function Animal (species, gender){
-//   this.species = species;
-//   this.gender = gender;
-// }
 
 // Create 2 different vehicles
 var civic;
