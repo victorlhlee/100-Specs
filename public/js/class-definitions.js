@@ -72,7 +72,7 @@ var club_name = "Fight Club";
 
 /* Step 9
  *
- * Define a literal object named "Gender"
+ * Define a literal object named "gender"
  * with properties and values set to:
  *
  *   female  => "female"
@@ -217,7 +217,7 @@ var DNA = ["nucleatides", "guanine", "adenine", "thymine","cytosine"];
  * with properties and values set to:
  * 
  * MacBook      => 1500
- * AlienWare    => 2500
+ * Alienware    => 2500
  * HP           => 499
  * Surface      => 320
  *
@@ -379,11 +379,11 @@ var installLinux = function(linuxflavorstype){
  *
  * Define a function named "browseURL" that takes
  * a browser and validates it, as defined by "browsers"
- * If the browser doesn't exist, return an error message.
+ * If the browser doesn't exist, return false.
  * If the browser exists, return the value which is a partial URL.
  * 
  * @param {String}
- * @return {String}
+ * @return {String if true else return false}
  *
  */
 
@@ -415,14 +415,14 @@ return false;
  *
  * Define a function named "favoritePlanet" that
  * takes in the person's current planet and validates
- * that the planet exists. If it doesn't, print the
+ * that the planet exists. If it doesn't, return the
  * following message:
  * 
  * "{currentPlanet} is not a planet!"
  * 
  * If the planet does exist, select a different, random
  * planet from the "planets" variable. Once selected,
- * print the following message:
+ * return the following message:
  * 
  * "I'm from {currentPlanet}, but I wish I could go to {randomPlanet}."
  * 
@@ -486,11 +486,11 @@ Person.prototype.earnMoney = function (dollarbillz){
  *
  * Define a function named "purchaseLaptop" that takes
  * a laptop as a parameter. If the laptop is valid as
- * defined in "laptopCosts" then return the cost. Otherwise,
+ * defined in "laptopCosts" then return the cost as a string. Otherwise,
  * return -1
  * 
  * @param {String}
- * @return {Number}
+ * @return {String}
  *
  */
 
@@ -529,8 +529,6 @@ function canTalkAbout (club) {
  *
  * Define a class named "Pen" with a property for
  * color and a class method named "write" that takes
- * a message to write as a parameter and prints the
- * message out.
  * a message string as a parameter and returns the
  * string back with the pen's color added to the 
  * beginning of the string
@@ -561,10 +559,15 @@ Pen.prototype.write = function (message){
  *
  * Define a class named "Garden" with a property for
  * the number of plants and whether it was recently
- * watered. Define class methods for "water" which
- * sets the recently watered property to true and
- * "grow" which adds a plant to the garden if it was
- * recently watered and exhausts the water.
+ * watered. 
+ * 
+ * Define a class method named "water" which
+ * sets the recently watered property to true
+ * 
+ * Defined a class method named "grow" which adds a plant to 
+ * the garden if it was recently watered and exhausts the water.
+ * If this method is called and the 'isWatered' property is 
+ * false, it should return false;
  * 
  * class
  *   Garden
@@ -1018,7 +1021,10 @@ function Animal (species, gender){
  * Step 52
  * 
  * Shape class
- * @param {number} sides The number of sides, should be greater than 3
+ * @param {number} sides The number of sides, should be a number 
+ * greater or equal to 3, if the number is less than 3 then set the
+ * value of the sides property to null.
+ * 
  */
 
 function Shape (sides){
@@ -1295,7 +1301,7 @@ Vehicle.prototype.drive = function (streetName) {
 /* Step 86
  *
  * Declare a Shoe method called findShoes that returns a string containing
- * the color and size of the shoe ("Found red shoes of size 8").
+ * the color and size of the shoe ("Found red shoes of size 7").
  *
  */
 
