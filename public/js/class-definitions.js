@@ -4,7 +4,7 @@
  *
  */
 
-var unicorn  = "";
+var unicorn  = "null";
 
 
 
@@ -173,7 +173,8 @@ var rainbow = {
   green :"#51AB0C", 
   blue : "#1593ED", 
   indigo : "#5215ED", 
-  violet : "#A915ED"},
+  violet : "#A915ED"
+  },
 
   isDouble : true
 
@@ -1021,7 +1022,9 @@ function Animal (species, gender){
  */
 
 function Shape (sides){
-  this.sides = sides;
+  if(sides >= 3){
+    this.sides = sides;
+  }
 }
 
 /**
@@ -1034,7 +1037,7 @@ function Shape (sides){
 
 function Box (contents, isOpen){
   this.contents = contents;
-  this.isOpen = true;
+  this.isOpen = isOpen;
 }
 
 /**
@@ -1045,7 +1048,7 @@ function Box (contents, isOpen){
  */
 
  function Door (isOpen){
-  this.isOpen = true;
+  this.isOpen = isOpen;
  }
 
 
@@ -1059,7 +1062,7 @@ function Box (contents, isOpen){
 
 function Shoe (size, color){
   this.size = size;
-  this.color =color;
+  this.color = color;
 }
 
 /**
@@ -1082,7 +1085,7 @@ function Shoe (size, color){
  */
 
 function Lightbulb (isOn){
-  this.isOn = true;
+  this.isOn = isOn;
 }
 
 /**
@@ -1105,7 +1108,7 @@ function Lightbulb (isOn){
  */
 
 function Meal (foods){
-  this.foods = [];
+  this.foods = foods;
 }
 /**
  * Create a new instance of the Classes you defined above, below!
@@ -1119,43 +1122,43 @@ var george = new Animal("Monkey", "male");
 var nemo = new Animal("Fish", "male");
 
 
-
-
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle("Honda", "Civic");
+var forte = new Vehicle("KIA", "Forte");
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+var hexagon = new Shape (6);
 
 // Create 2 boxes
-var catBox;
-var christmasPresent;
+var cat = new Animal("Cat", "female");
+var catBox = new Box(cat,true);
+var christmasPresent = new Box("something",false);
+
 
 // Create 2 doors
-var automaticDoor;
-var bankVault;
+var automaticDoor = new Door(true);
+var bankVault = new Door(false);
 
 // Create 2 shoes
-var rubySlippers;
-var dressShoes;
+var rubySlippers = new Shoe(7, "red");
+var dressShoes = new Shoe(10, "black");
 
 // Create 2 houses
-var singleStory;
-var twoStory;
+var singleStory = new House(1);
+var twoStory = new House(2);
 
 // Create 2 lightbulbs
-var incandescent;
-var halogen;
+var incandescent = new Lightbulb(true);
+var halogen = new Lightbulb(false);
 
 // Create 2 cookies of different flavors
-var chocolateChip;
-var gingerbread;
+var chocolateChip = new Cookie("chocolate");
+var gingerbread = new Cookie("gingerbread");
 
 // Create 2 different meals
-var breakfast;
-var dinner;
+var breakfast = new Meal(["cereal","milk"]);
+var dinner = new Meal (["fish","vegetables"]);
 
 
  /* Steps 81 to 90
@@ -1180,6 +1183,23 @@ var dinner;
  *
  */
 
+  Animal.prototype.isWarmBlooded = function(species){
+    if(this.species === "Fish"){
+      return false;
+    }
+
+    if(this.species === "Monkey"){
+      return true;
+    }
+
+    if(this.species === "Bird"){
+      return true;
+    }
+
+    return "Could not determine if warm-blooded";
+  };
+  
+  
 
 /* Step 82
  *
@@ -1189,6 +1209,12 @@ var dinner;
  *
  */
 
+Vehicle.prototype.drive = function (streetName) {
+  if(typeof streetName === 'string' && streetName){
+    return "Driving on " + streetName;
+  }
+  return "Driving forward";
+};
 
  /* Step 83
  *
@@ -1208,6 +1234,24 @@ var dinner;
  *
  */
 
+ Shape.prototype.getType = function(){
+  
+  var sidesObj = {
+      3 : "triangle",
+      4 : "quadrilateral",
+      5 : "pentagon",
+      6 : "hexagon",
+      7 : "heptagon",
+      8 : "octagon",
+      9 : "nonagon",
+      10 : "decagon"
+      };
+      if(sidesObj.hasOwnProperty(this.sides)){
+        return sidesObj[this.sides];
+      }
+      return "Could not determine type";
+};    
+
 
 /* Step 84
  *
@@ -1218,6 +1262,15 @@ var dinner;
  *
  */
 
+  Box.prototype.openBox = function () {
+    if(this.isOpen === false) {
+      this.isOpen = true;
+      return true;
+    }
+    if(this.isOpen === true) {
+      return false;
+    }
+  };
 
  /* Step 85
  *
@@ -1227,6 +1280,17 @@ var dinner;
  *
  */
 
+ Door.prototype.openClose = function () {
+   if(this.isOpen === true) {
+    this.isOpen = false;
+    return false;
+   }
+   if(this.isOpen === false) {
+    this.isOpen = true;
+    return true;
+   }
+ };
+
 
 /* Step 86
  *
@@ -1235,6 +1299,9 @@ var dinner;
  *
  */
 
+Shoe.prototype.findShoes = function (){
+  return "Found " + this.color + " shoes of size " + this.size;
+};
 
  /* Step 87
  *
@@ -1244,6 +1311,13 @@ var dinner;
  * storiesTooTall, return true, else return false.
  *
  */
+
+ House.prototype.isATallStory = function (storiesTooTall){
+  if(this.stories >= storiesTooTall){
+    return true;
+  }
+  return false;
+ };
 
 
  /* Step 88
@@ -1256,6 +1330,13 @@ var dinner;
  *
  */
 
+Lightbulb.prototype.flipSwitch = function (on){
+  if(on === "on"){
+    this.isOn = true;
+    return true;
+  }
+  return false;
+};
 
  /* Step 89
  *
@@ -1265,6 +1346,12 @@ var dinner;
  *
  */
 
+Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek){
+  if(this.flavor === 'chocolate' && dayOfTheWeek === 'Monday'){
+    return true;
+  }
+  return false;
+};
 
  /* Step 90
  *
@@ -1280,6 +1367,18 @@ var dinner;
  *
  */
 
+Meal.prototype.containsJunkFood = function (){
+  var junkFood = ["chips", "soda", "ice cream", "popcorn", "candy"];
+
+  for(var i = 0; i<junkFood.length; i++){
+    if(junkFood.indexOf(this.foods[i])!== -1){
+      return true;
+    }
+  }
+  return false;
+
+};
+
 
  /* Steps 91 to 100
  *
@@ -1294,9 +1393,9 @@ var dinner;
  * and assign the values to each variable below.
  *
  */
-var warmBloodedAnimal;
-var coldBloodedAnimal;
-var notWarmOrColdAnimal;
+var warmBloodedAnimal = new Animal("Monkey", "male").isWarmBlooded();
+var coldBloodedAnimal = new Animal("Fish", "male").isWarmBlooded();
+var notWarmOrColdAnimal = new Animal("Tiger", "female").isWarmBlooded();
 
 
 /* Step 92
@@ -1305,8 +1404,8 @@ var notWarmOrColdAnimal;
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+var streetDriving = new Vehicle("Honda", "Civic").drive("Liliha St.");
+var forwardDriving = new Vehicle("KIA", "Forte").drive();
 
 
  /* Step 93
@@ -1315,8 +1414,8 @@ var forwardDriving;
  * and assign the values to each variable below.
  *
  */
-var decagon;
-var polygon;
+var decagon = new Shape(10).getType();
+var polygon = new Shape(11).getType();
 
 
 /* Step 94
@@ -1325,8 +1424,8 @@ var polygon;
  * and assign the values to each variable below.
  *
  */
-var openAClosedBox;
-var closeAnOpenBox;
+var openAClosedBox = new Box("catBox", false).openBox();
+var closeAnOpenBox  = new Box("christmasPresent", true).openBox();
 
 
  /* Step 95
@@ -1335,8 +1434,8 @@ var closeAnOpenBox;
  * and assign the values to each variable below.
  *
  */
-var openAClosedDoor;
-var closeAnOpenDoor;
+var openAClosedDoor = new Door(false).openClose();
+var closeAnOpenDoor = new Door(true).openClose();
 
 
 /* Step 96
@@ -1345,8 +1444,8 @@ var closeAnOpenDoor;
  * and assign the values to each variable below.
  *
  */
-var redShoesSize7;
-var blackShoesSize10;
+var redShoesSize7 = new Shoe(7, "red").findShoes();
+var blackShoesSize10 = new Shoe(10, "black").findShoes();
 
 
  /* Step 97
@@ -1355,8 +1454,8 @@ var blackShoesSize10;
  * and assign the values to each variable below.
  *
  */
-var farTooTallAStory;
-var shortStory;
+var farTooTallAStory = new House(2).isATallStory(1);
+var shortStory = new House(1).isATallStory(2);
 
 
  /* Step 98
@@ -1365,8 +1464,8 @@ var shortStory;
  * and assign the values to each variable below.
  *
  */
-var kitchenLightsOn;
-var porchLightsOff;
+var kitchenLightsOn = new Lightbulb(true).flipSwitch("on");
+var porchLightsOff = new Lightbulb(false).flipSwitch();
 
 
  /* Step 99
@@ -1375,8 +1474,8 @@ var porchLightsOff;
  * and assign the values to each variable below.
  *
  */
-var cookieMonsterPwns;
-var cookieMonsterBlocked;
+var cookieMonsterPwns = new Cookie('chocolate').swipedByCookieMonster('Monday');
+var cookieMonsterBlocked = new Cookie('peanut butter').swipedByCookieMonster('Friday');
 
 
  /* Step 100
@@ -1385,5 +1484,5 @@ var cookieMonsterBlocked;
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+var badForYou = new Meal(["chips", "soda"]).containsJunkFood(true);
+var goodForYou = new Meal(["fish", "vegetables"]).containsJunkFood(false);
