@@ -4,7 +4,7 @@
  *
  */
 
-var unicorn  = "null";
+var unicorn  = null;
 
 
 
@@ -592,8 +592,15 @@ Pen.prototype.write = function (message){
  };
 
  Garden.prototype.grow = function (){
-  this.plantsTotal += 1;
+  if(this.isWatered === true){
+    this.isWatered = false;
+    this.plantsTotal = this.plantsTotal + 1;
+    return  this.plantsTotal;
+
+  }
+  return false;
  };
+
 
 /* Step 32
  *
@@ -1031,7 +1038,15 @@ function Shape (sides){
   if(sides >= 3){
     this.sides = sides;
   }
+  if(sides < 3){
+    this.sides = null;
+  }
+  if(typeof sides !== "number"){
+    this.sides = null;
+  }
 }
+
+
 
 /**
  * Step 53
