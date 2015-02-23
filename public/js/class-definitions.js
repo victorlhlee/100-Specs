@@ -758,7 +758,8 @@ PrincessLeia.prototype.marries = function (man){
  *   addDiscovery
  *   
  */
-function Scientist (name, money, age, gender, disciplines, discoveries){
+function Scientist (name, money, age, gender){
+  Person.call(this, name, money, age, gender);
   this.disciplines = [];
   this.discoveries = [];
 }
@@ -769,17 +770,35 @@ Scientist.prototype = Object.create(Person.prototype,{
   }
 });
 
-Scientist.prototype.addDiscipline = function(string){
-  this.disciplines += string;
+
+Scientist.prototype.addDiscipline = function(discipline){
+  this.disciplines.push(discipline);
 
 };
 
-Scientist.prototype.checkDiscipline = function(){
-
+Scientist.prototype.checkDiscipline = function(discipline){
+  for (var i = 0; i < this.disciplines.length; i++){
+    if(this.disciplines[i] === discipline){
+      return true;
+    }
+  }
+  return false;
 };
 
-Scientist.prototype.addDiscovery = function (){
+Scientist.prototype.addDiscovery = function (discovery){
+  this.discoveries.push(discovery);
 
+  if(this.discoveries.length === 1){
+    return "I discovered " + this.discoveries[0] + ".";
+  }
+
+  if(this.discoveries.length === 2){
+    return "I discovered " + this.discoveries[0] + " and " + this.discoveries[1] + ".";
+  }
+  
+  if(this.discoveries.length === 3){
+    return "I discovered " + this.discoveries[0] + ", " + this.discoveries[1] + ", and " + this.discoveries[2] + ".";
+  }
 };
 
 /* Step 36
@@ -1095,8 +1114,24 @@ function Meal (foods){
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+
+
+function george () {
+  
+
+  Animal.call();
+}
+
+george.prototype = Object.create(Animal.prototype, {
+  constructor : {
+    value: Animal
+   }
+  });
+
+// function Animal (species, gender){
+//   this.species = species;
+//   this.gender = gender;
+// }
 
 // Create 2 different vehicles
 var civic;
